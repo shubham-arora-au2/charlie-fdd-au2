@@ -9,7 +9,9 @@ const BooksList = (props) => {
         <div className="card mb-3" style={{maxWidth: '540px'}}>
         <div className="row no-gutters">
           <div className="col-md-4">
-            <img src={each.volumeInfo.imageLinks.thumbnail} className="card-img" alt="..."/>
+            <img src={each.volumeInfo.imageLinks.thumbnail ?
+                each.volumeInfo.imageLinks.thumbnail :
+              each.volumeInfo.imageLinks.smallThumbnail} className="card-img" alt={each.volumeInfo.previewLink}/>
           </div>
           <div className="col-md-8">
             <div className="card-body">
