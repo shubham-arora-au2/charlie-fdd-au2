@@ -1,21 +1,21 @@
-export function clearBooks() {
-    console.log('action: CLEAR_BOOKS');
+export function clearBooks(){
+    console.log("CLEARING BOOKS");
     return {
-        type: 'CLEAR_VIDEOS'
-    };
-}
+      type: "CLEAR_BOOKS"
+    }
+  }
+  
+  export function fetchingBooks(){
+    return {
+      type: "FETCHING_BOOKS"
+    }
+  }
+  
+  export function loadedBooks(result){
+    console.log(result.items);
+    return {
+      type: "LOADED_BOOKS",
+      booksList: result.items
+    }
+  }
 
-export function fetchingBooks() {
-    console.log('action: FETCHING_BOOKS');
-    return {
-        type: 'FETCHING_BOOKS'
-    };
-}
-
-export function retrievedBooks(result) {
-    console.log('action: RETRIEVED_BOOKS');
-    return {
-        type: 'RETRIEVED_BOOKS',
-        booksList: result.items
-    };
-}

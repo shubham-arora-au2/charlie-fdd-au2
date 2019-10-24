@@ -1,20 +1,21 @@
 import React from 'react';
-import {BrowserRouter as Router , Route} from 'react-router-dom';
-import Header from './Header';
-import HomePage from './Home';
-import SearchPage from './SearchPage';
-import './App.css';
+import {connect} from 'react-redux';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import Search from './Search'
+import Header from './Header'
+import BooksList from './BooksList'
 
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Header />
-        <Route path="/" exact={true} component={HomePage} />
-        <Route  path="/search" component = {SearchPage}/>
-      </div>
+    <div className="App">
+      <div className="App-header">
+      <Header />
+      <Search />
+    </div>
+      <BooksList />
+    </div>
     </Router>
-
   );
 }
 
