@@ -1,5 +1,5 @@
 import React from 'react';
-import Search from './search';
+import SearchBox from './SearchBox';
 import Login from './login'
 import { LogoutUser } from '../actions/loginactions';
 import { connect } from 'react-redux'
