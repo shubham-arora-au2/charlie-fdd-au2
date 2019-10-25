@@ -11,3 +11,35 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+
+#navigation {
+  height: 40px;
+  font-family: sans-serif;
+  width: 100%;
+  position: relative;
+  background-color: white;
+  box-shadow: 0px 0px 20px 0px #ccc;
+  /* z-index: 2; */
+}
+
+
+#navigation ul li {
+  display: inline-block;
+  padding: 9px;
+  font-weight: 540;
+  margin-right: 20px;
+  font-size: 15px;
+}
+#navigation ul li.active{
+  color: blue;
+} 
+#navigation ul li:hover {
+  color:red;
+  
+}
+
+#header{
+  position : fixed;
+  width: 100%;
+}

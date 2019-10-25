@@ -1,32 +1,16 @@
-import React from 'react'
-import {connect} from 'react-redux';
-import {fetchingBooks, loadedBooks} from '../actions/bookActions';
-import {fetchBooks} from '../api';
+import React from 'react';
 
-
-const Search = (props) => {
-  return (
-    <div className="container"><br/>
-    <div className="input-group mb-3">
-      <input type="text" className="form-control" id="mySearch" placeholder="Enter your book search here" aria-label="Recipient's username" aria-describedby="button-addon2" />
-      <div className="input-group-append">
-        <button className="btn btn-outline-secondary btn-warning" onClick={props.handleClick} type="button" id="button-addon2">Search</button>
-      </div>
-    </div>
-    </div>
-  )
+class Search extends React.Component{
+  render(){
+    return (
+        <div className='input-group' style={{paddingLeft:'15%'}}>
+            <input id="search" placeholder='Search for books here !' className="form-control col-md-5" />
+            <div className='input-group-append'>
+            <button className='btn btn-secondary'>Search</button>
+            </div>
+        </div>
+    )
+  }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  console.log("Search ===> mapDispatchToProps");
-  return {
-    handleClick: (event) => {
-      dispatch(fetchingBooks());
-      console.log(document.getElementById('mySearch').value);
-      let searchKey = document.getElementById('mySearch').value
-      fetchBooks(searchKey).then(bookData => dispatch(loadedBooks(bookData)))
-    }
-  }
-};
-
-export default connect(null, mapDispatchToProps)(Search)
+export default Search;

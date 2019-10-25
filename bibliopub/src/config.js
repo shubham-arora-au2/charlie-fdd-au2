@@ -1,5 +1,5 @@
 const CONFIG = {
-  API_KEY: "AIzaSyC-mXRK0Ka0rfOI7UWArCgrYc06QSWy3I4"
-}
+    API_KEY: 'AIzaSyBotcBAuQ5VlNhJhuZxpE6g_mOV2hbr-tE'
+};
 
-export default CONFIG
+export default CONFIG;
