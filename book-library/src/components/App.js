@@ -1,21 +1,22 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
-import Search from './Search'
-import Header from './Header'
-import BooksList from './BooksList'
+import {BrowserRouter as Router , Route} from 'react-router-dom';
+import Navbar from './navbar';
+import HomePage from './Home';
+import SearchPage from './SearchPage';
+import './App.css';
+import Viewer from './viewer'
 
 function App() {
   return (
     <Router>
-    <div className="App">
-      <div className="App-header">
-      <Header />
-      <Search />
-    </div>
-      <BooksList />
-    </div>
+      <div className="App">
+        <Navbar />
+        <Route path="/" exact={true} component={HomePage} />
+        <Route  path="/search" component = {SearchPage}/>
+        <Route path="/read/:bookId" component = {Viewer} />
+      </div>
     </Router>
+
   );
 }
 

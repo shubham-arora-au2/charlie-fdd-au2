@@ -1,8 +1,27 @@
-import CONFIG from './config'
+import CONFIG from './config.js';
 
-export const fetchBooks = (searchQuery) => {
-  let targetURL
-  targetURL = `https://www.googleapis.com/books/v1/volumes?q=${searchQuery}&key=${CONFIG.API_KEY}`
+export function fetchBooks(query) {
+    let url;
+    if(query === null)
+        url = `https://www.googleapis.com/books/v1/volumes?q=flowers+inauthor:keyes&key=${CONFIG.API_KEY}`;
+        // url = 'https://www.googleapis.com/books/v1/volumes?q=finance'
+    else
+        url = `https://www.googleapis.com/books/v1/volumes?key=${CONFIG.API_KEY}&q=${query}`;
 
-  return fetch(targetURL).then((data) => {return data.json()})
-};
+    console.log(url);
+    return fetch(url)
+        .then(function(data) {
+            return data.json();
+        });
+}
+
+export function fetchBookDetails(bookId) {
+        let url = `https://www.googleapis.com/books/v1/volumes?q=flowers+inauthor:keyes&key=${CONFIG.API_KEY}&id=${bookId}`;
+
+    console.log(url);
+    return fetch(url, {credentials: 'include'})
+        .then(function (data) {
+            return data.json();
+        });
+}
+

@@ -6,6 +6,7 @@
     "codesandbox": "^2.1.10",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
+    "react-google-login": "^5.0.6",
     "react-redux": "^7.1.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
