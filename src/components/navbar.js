@@ -41,7 +41,7 @@ function mapActionToProps(dispatch){
 }
 
 const mapStateToProps = (state) => {
-  return { LoggedIn: localStorage.getItem('user') }
-  }
+  return { LoggedIn: state.loginReducer.LoggedIn }
+}
 
 export default connect(mapStateToProps,mapActionToProps)(Navbar);
